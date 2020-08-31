@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+<head><title>User Info</title></head>
+{% block content %}
+<body>
+<form method="post">
+    <input name="name" type="text" placeholder="Name:{{USER.name}}">
+    <input name="surname" type="text" placeholder="Surname:{{USER.surname}}">
+    <input name="age" type="number" placeholder="Age:{{USER.price}}">
+    <input name="score" type="number" placeholder="Score:{{USER.price}}">
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+</form>
+
+{% endblock %}

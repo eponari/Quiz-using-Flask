@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+<center><h3>History</h3></center>
+<table>
+<th>
+    <tr><td>Id</td> <td>Name</td> <td>Surname</td> <td>Age</td><td>Score</td> <td>Hackerman?</td> <td>Embarrassed? No problem</td></tr>
+</th>
+{% for user in USERS %}
+<tr>
+<td>{{user.id}}</td> <td>{{user.name}}</td> <td>{{user.surname}}</td> <td>{{user.age}}</td> <td>{{user.score}}</td> <td><a href="{{ url_for('modify',id=user.id) }}">Modify</a></td> <td><a href="{{ url_for('delete',id=user.id) }}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+<center><a href="{{ url_for('main') }}" class="waves-effect waves-light btn">Mainpage</a>
+        </center>
+{% endblock %}
